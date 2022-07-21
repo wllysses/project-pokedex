@@ -28,14 +28,22 @@ function getPokemons(pokemonName) {
 
 document.getElementById('btn__search').addEventListener('click', () => {
   const pokemonName = document.getElementById('search__pokemon').value.toLowerCase()
-  getPokemons(pokemonName)
+  if(pokemonName.length === 0) {
+    alert('GIVE A POKEMON NAME OR ID')
+  } else {
+    getPokemons(pokemonName)
+  }
 })
 
 document.getElementById('search__pokemon').addEventListener('keyup', (e) => {
   const pokemonName = e.target.value.toLowerCase()
   const keyEnter = e.which || e.keyCode
   if(keyEnter === 13) {
-    getPokemons(pokemonName)
+    if(pokemonName.length === 0) {
+      alert('GIVE A POKEMON NAME OR ID')
+    } else {
+      getPokemons(pokemonName)
+    }
   }
 })
 
