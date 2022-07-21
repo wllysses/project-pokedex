@@ -86,6 +86,7 @@ header h1 {
 
 .search__pokemons #search__pokemon {
     background-color: #8DC73F;
+    border: 2px solid black;
     border-radius: 20px;
     height: 40px;
     padding-left: 10px;
