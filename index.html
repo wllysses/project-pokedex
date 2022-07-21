@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PodeDex</title>
+    <title>PokéDex</title>
     <link rel="stylesheet" href="./src/css/style.css">
     <link rel="shortcut icon" href="./src/images/favicon.ico" type="image/x-icon">
 
@@ -22,9 +22,14 @@
         <div class="main__content">
             
         </div>
-        <footer class="search__pokemons">
-            <input type="text" name="search__pokemon" id="search__pokemon" placeholder="Pokemon's name or Id"> <br>
+        <div class="search__pokemons">
+            <input type="text" name="search__pokemon" id="search__pokemon" placeholder="Pokemon's name or Id" required> <br>
             <button id="btn__search">Search</button>
+        </div>
+
+        <footer class="buttons">
+            <button class="btn btn-prev">< Prev</button>
+            <button class="btn btn-next">Next ></button>
         </footer>
     </main>
 

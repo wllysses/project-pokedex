@@ -75,7 +75,7 @@ header h1 {
     justify-content: space-around;
 }
 
-footer {
+.search__pokemons {
     background-color: #636363;
     width: 90%;
     height: 20%;
@@ -87,7 +87,7 @@ footer {
     padding: 5px;
 }
 
-footer #search__pokemon {
+.search__pokemons #search__pokemon {
     background-color: #8DC73F;
     border-radius: 20px;
     height: 40px;
@@ -95,16 +95,42 @@ footer #search__pokemon {
     outline: none;
 }
 
-footer #search__pokemon::placeholder {
+.search__pokemons #search__pokemon::placeholder {
     color: black;
     font-weight: 700;
 }
 
-footer #btn__search {
+.search__pokemons #btn__search {
     width: 50%;
     height: 50%;
     margin: auto;
     background-color: #8DC73F;
     font-weight: 700;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.search__pokemons #btn__search:hover {
+    background-color: #6b9731;
+}
+
+footer.buttons {
+    width: 90%;
+    margin: 20px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer.buttons .btn {
+    width: 80px;
+    height: 30px;
+    background-color: #8DC73F;
+    font-weight: 700;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+footer.buttons .btn:hover {
+    background-color: #6b9731;
 }

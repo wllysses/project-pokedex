@@ -1,24 +1,28 @@
 let pokemonId = document.querySelector('.pokemon__id')
 let namePokemon = document.querySelector('.pokemon__name')
+let search__pokemon = 1
 
 async function pokemons(pokemonName) {
-    const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}/`
-    const response = await fetch(url)
-    return await response.json()
+  pokemonId.innerHTML = ''
+  namePokemon.innerHTML = 'Loading...'
+  const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}/`
+  const response = await fetch(url)
+  return await response.json()
   }
   
-  function getPokemons(pokemonName) {
-      pokemons(pokemonName).then(pokemonData => {
-        let pokemonInfos =    `
-                                <img src="${pokemonData.sprites.versions['generation-v']['black-white']['animated']['front_default']}" alt="Pokemon Image" />
-                                <div class="pokemon__stats">
-                                  <span><strong>Type</strong>: ${pokemonData.types[0].type.name}</span>
-                                  <span><strong>Weight</strong>: ${pokemonData.weight}</span>
-                                </div>
+function getPokemons(pokemonName) {
+  pokemons(pokemonName).then(pokemonData => {
+    let pokemonInfos =    `
+                            <img src="${pokemonData.sprites.versions['generation-v']['black-white']['animated']['front_default']}" alt="Pokemon Image" />
+                            <div class="pokemon__stats">
+                              <span><strong>Type</strong>: ${pokemonData.types[0].type.name}</span>
+                              <span><strong>Weight</strong>: ${pokemonData.weight}</span>
+                            </div>
                             `
-        pokemonId.innerHTML = pokemonData.id
-        namePokemon.innerHTML = pokemonData.name
-        document.querySelector('.main__content').innerHTML = pokemonInfos
+    pokemonId.innerHTML = pokemonData.id
+    namePokemon.innerHTML = pokemonData.name
+    document.querySelector('.main__content').innerHTML = pokemonInfos
+    search__pokemon = pokemonData.id
     }) 
   }
 
@@ -35,4 +39,17 @@ document.getElementById('search__pokemon').addEventListener('keyup', (e) => {
   }
 })
 
-getPokemons('1')
+document.querySelector('.btn-prev').addEventListener('click', () => {
+  if(search__pokemon > 1) {
+    search__pokemon--
+    getPokemons(search__pokemon)
+  }
+  
+})
+
+document.querySelector('.btn-next').addEventListener('click', () => {
+  search__pokemon++
+  getPokemons(search__pokemon)
+})
+
+getPokemons(search__pokemon)
