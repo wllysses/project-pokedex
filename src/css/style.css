@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Oxanium', cursive;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../images/bg.png') center no-repeat;
+    background-size: cover;
+}
+
+.container {
+    width: 300px;
+    height: 500px;
+    background-color: #eb3535;
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.541);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .details {
+    width: 50px;
+    height: 50px;
+    background-color: #01FFFF;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+header h1 {
+    max-width: 200px;
+    font-size: 20px;
+}
+
+.container .main__content {
+    margin: 20px auto;
+    width: 90%;
+    height: 50%;
+    background-color: white;
+    border: 2px solid black;
+}
+
+.container .main__content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    background: url('../images/pokemons-bg.png') center no-repeat;
+    background-size: cover;
+}
+
+.container .main__content img {
+    padding-top: 50px;
+    width: 50%;
+}
+
+.container .main__content .pokemon__stats {
+    width: 100%;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.774);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer {
+    background-color: #636363;
+    width: 90%;
+    height: 20%;
+    margin: auto;
+    border-radius: 10px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+footer #search__pokemon {
+    background-color: #8DC73F;
+    border-radius: 20px;
+    height: 40px;
+    padding-left: 10px;
+    outline: none;
+}
+
+footer #search__pokemon::placeholder {
+    color: black;
+    font-weight: 700;
+}
+
+footer #btn__search {
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    background-color: #8DC73F;
+    font-weight: 700;
+    cursor: pointer;
+}
